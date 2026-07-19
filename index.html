@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ======================================================
+     EDIT: Page title (shows in browser tab) and description
+     ====================================================== -->
+<title>Rupert Purchase &mdash; Rocketry &amp; Propulsion</title>
+<meta name="description" content="Amateur rocketry and propulsion projects — design, builds, launch data.">
+
+<!-- Fonts: Manrope (display), Inter (body), JetBrains Mono (HUD/data labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-glow" aria-hidden="true"></div>
+
+<!-- ======================================================
+     NAV BAR
+     EDIT: your name/handle on the left, links on the right
+     ====================================================== -->
+<header class="nav">
+  <a href="#top" class="nav__mark">RUPERT'S ROCKETS<span>_</span></a>
+  <nav class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#log">Build Log</a>
+    <a href="#about">About</a>
+    <a href="all-builds.html">All Builds</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav__status">
+    <span class="nav__status-dot" aria-hidden="true"></span>
+    <!-- EDIT: this status text -->
+    Currently building
+  </div>
+</header>
+
+<!-- ======================================================
+     HERO
+     EDIT: eyebrow text, headline, subline, hero image, HUD labels
+     ====================================================== -->
+<section class="hero" id="top">
+  <div class="hero__col hero__col--text">
+    <p class="eyebrow">// AMATEUR ROCKETS &amp; BACKYARD PROJECTS</p>
+
+    <h1 class="hero__title">
+      Building things<br><em>that leave the ground.</em>
+    </h1>
+
+    <p class="hero__sub">
+      <!-- EDIT: your one-line mission statement -->
+      These are some of the rocketry projects I've designed, developed, and tested.
+    </p>
+
+    <div class="btn-row">
+      <a href="#missions" class="btn btn--primary">
+        View selected builds
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="all-builds.html" class="btn btn--ghost">
+        See all builds
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero visual: swap the image src for your own best shot.
+       Edit the HUD text below to match whatever's in the photo. -->
+  <div class="hero__col hero__col--visual">
+    <div class="hero__frame">
+      <img src="assets/photos/mission-01.jpg" alt="Rupert's submerged launch rocket on the pad">
+
+      <div class="hud hud--top-left">
+        <span class="hud__label">Vehicle</span>
+        Submerged Launch
+      </div>
+
+      <div class="hud hud--bottom-left hud--stack">
+        <div class="hud-item">
+          <span class="hud__label">Status</span>
+          Tested
+        </div>
+        <div class="hud-item">
+          <span class="hud__label">Test Runs</span>
+          2
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     WORK / MISSIONS (project grid)
+     Each .mission-card is one project. Copy/paste the whole
+     <article> block to add another — instructions below.
+     "View all builds" links to all-builds.html, your full archive.
+     ====================================================== -->
+<section class="work" id="work">
+  <div class="section-head reveal">
+    <div>
+      <p class="section-eyebrow">// 01 &mdash; Selected builds</p>
+      <h2 class="section-title">Featured work</h2>
+    </div>
+    <a href="all-builds.html" class="section-link">
+      View all builds
+      <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="mission-grid">
+
+    <!-- ---------- MISSION CARD 1 (duplicate this whole <article> to add a project) ---------- -->
+    <article class="mission-card reveal">
+      <div class="mission-card__media">
+        <!-- PHOTO: replace src with your file in assets/photos/ -->
+        <img src="assets/photos/mission-01.jpg" alt="Photo of the submerged launch silo" loading="lazy">
+        <!--
+          TO USE A VIDEO INSTEAD OF A PHOTO, replace the <img> above with:
+
+          <video controls poster="assets/photos/mission-01-poster.jpg">
+            <source src="assets/videos/mission-01.mp4" type="video/mp4">
+          </video>
+        -->
+        <span class="mission-card__status mission-card__status--flown">TESTED</span>
+      </div>
+      <div class="mission-card__body">
+        <div class="mission-card__top">
+          <p class="mission-card__code">RKT&ndash;04</p>
+          <span class="mission-card__arrow">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <h3 class="mission-card__title">Submerged Launch</h3>
+        <p class="mission-card__desc">
+          A low-cost setup that launched a rocket from a silo submerged underwater.
+        </p>
+        <div class="mission-card__stats">
+          <div><span>Tests</span><b>2</b></div>
+          <div><span>Materials</span><b>PETG, cardboard</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- MISSION CARD 2 ---------- -->
+    <article class="mission-card reveal">
+      <div class="mission-card__media">
+        <img src="assets/photos/underwater%20launch%20ss.jpg" alt="Underwater shot of the rocket launch" loading="lazy">
+        <span class="mission-card__status mission-card__status--progress">IN PROGRESS</span>
+      </div>
+      <div class="mission-card__body">
+        <div class="mission-card__top">
+          <p class="mission-card__code">RKT&ndash;05</p>
+          <span class="mission-card__arrow">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <h3 class="mission-card__title">Meridian II</h3>
+        <p class="mission-card__desc">
+          Dual-deploy recovery and a redesigned fin can, targeting a
+          controlled descent and reusable airframe.
+        </p>
+        <div class="mission-card__stats">
+          <div><span>Target</span><b>6,000 ft</b></div>
+          <div><span>Motor</span><b>M650</b></div>
+          <div><span>Mass</span><b>4.4 kg</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- MISSION CARD 3 ---------- -->
+    <article class="mission-card reveal">
+      <div class="mission-card__media">
+        <img src="assets/photos/mission-03.jpg" alt="Static test fire of a small motor" loading="lazy">
+        <span class="mission-card__status mission-card__status--flown">TESTED</span>
+      </div>
+      <div class="mission-card__body">
+        <div class="mission-card__top">
+          <p class="mission-card__code">PROP&ndash;02</p>
+          <span class="mission-card__arrow">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <h3 class="mission-card__title">Static Test Stand</h3>
+        <p class="mission-card__desc">
+          Load-cell equipped test stand for characterizing thrust curves
+          on small-scale motors before flight certification.
+        </p>
+        <div class="mission-card__stats">
+          <div><span>Peak Thrust</span><b>210 N</b></div>
+          <div><span>Burn Time</span><b>2.4 s</b></div>
+          <div><span>Sensor</span><b>50 kg LC</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!--
+      TO ADD MORE MISSIONS HERE (featured on the homepage):
+      1. Copy one entire <article class="mission-card reveal"> ... </article> block
+      2. Paste it right below this comment, inside the .mission-grid div
+      3. Change the image, code (RKT-06 etc.), title, description, and stats
+      There's no limit on how many you add — the grid wraps automatically.
+
+      Tip: this section is meant to be a curated highlight reel. Put every
+      project you've ever built in all-builds.html instead — see that file
+      for the same copy/paste pattern.
+    -->
+
+  </div>
+</section>
+
+<!-- ======================================================
+     BUILD LOG (about / timeline)
+     EDIT: your bio + milestones. This IS a real chronological
+     list, so numbering here makes sense.
+     ====================================================== -->
+<section class="log" id="log">
+  <div class="section-head reveal">
+    <div>
+      <p class="section-eyebrow">// 02 &mdash; Build log</p>
+      <h2 class="section-title">How this started</h2>
+    </div>
+  </div>
+
+  <p class="log__intro reveal">
+    <!-- EDIT: your bio paragraph -->
+    I got into high-power rocketry building Estes kits in middle school
+    and never really stopped scaling up. These days most of my time goes
+    into motor chemistry, airframe design, and flight electronics —
+    documented here as I go.
+  </p>
+
+  <ol class="timeline">
+    <!-- EDIT: add/remove <li> entries — each is one timeline milestone -->
+    <li class="timeline__item reveal">
+      <span class="timeline__marker">01</span>
+      <p class="timeline__date">2022</p>
+      <p class="timeline__text">First certified high-power flight, H-class motor.</p>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__marker">02</span>
+      <p class="timeline__date">2023</p>
+      <p class="timeline__text">Started casting my own composite propellant.</p>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__marker">03</span>
+      <p class="timeline__date">2024</p>
+      <p class="timeline__text">Built a static test stand with load-cell data logging.</p>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__marker">04</span>
+      <p class="timeline__date">2026</p>
+      <p class="timeline__text">Submerged Launch silo test, first underwater attempt.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================================================
+     ABOUT + STATS
+     EDIT: bio text and the three stat numbers
+     ====================================================== -->
+<section class="about" id="about">
+  <div class="section-head reveal">
+    <div>
+      <p class="section-eyebrow">// 03 &mdash; About</p>
+      <h2 class="section-title">Designer &amp; builder, drawn to space</h2>
+    </div>
+  </div>
+
+  <div class="about__grid">
+    <p class="about__text reveal">
+      <!-- EDIT: a longer bio paragraph if you want one here -->
+      I care about the whole process — sketching an idea, machining or
+      3D-printing the parts, running the numbers, and finally watching it
+      fly (or, in one case, launch from underwater). Every project on this
+      site is documented start to finish, including the failures.
+    </p>
+  </div>
+
+  <!-- EDIT: swap these three numbers for whatever you want to lead with -->
+  <div class="stats-band reveal">
+    <div class="stat">
+      <span class="stat__num" data-count="14">0</span>
+      <span class="stat__label">Launches</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="4210" data-suffix=" ft">0</span>
+      <span class="stat__label">Max apogee</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="6">0</span>
+      <span class="stat__label">Motors built</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     CONTACT
+     EDIT: your email + social links
+     ====================================================== -->
+<section class="contact" id="contact">
+  <div class="section-head reveal">
+    <div>
+      <p class="section-eyebrow">// 04 &mdash; Contact</p>
+      <h2 class="section-title">Get in touch</h2>
+    </div>
+  </div>
+  <p class="contact__text reveal">
+    Building something similar, or want to collaborate on a launch?
+  </p>
+  <a href="mailto:you@example.com" class="contact__email reveal">you@example.com</a>
+
+  <div class="contact__links reveal">
+    <!-- EDIT: swap hrefs for your real profiles, delete any you don't use -->
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://youtube.com/@yourusername" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__mark">&copy; 2026 Rupert Purchase. Built from scratch, launched the same way.</p>
+    <div class="footer__links">
+      <a href="#work">Work</a>
+      <a href="#log">Build Log</a>
+      <a href="all-builds.html">All Builds</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 14 14" fill="none"><path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
