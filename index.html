@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rupert Purchase &mdash; Rocketry &amp; Propulsion</title>
+<meta name="description" content="Amateur rocketry and propulsion projects — design, builds, launch data.">
+
+<!-- Source Serif 4 (headings), Inter (body), JetBrains Mono (dates/labels/captions) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================================================
+     MASTHEAD
+     EDIT: your name, tagline, nav links
+     ====================================================== -->
+<header class="masthead" id="top">
+  <div class="masthead__top">
+    <span class="masthead__name">Rupert Purchase</span>
+    <nav class="masthead__nav">
+      <a href="#work">Work</a>
+      <a href="#log">Build Log</a>
+      <a href="#about">About</a>
+      <a href="all-builds.html">All Builds</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <p class="masthead__tagline">
+    <!-- EDIT: a short italic line under your name -->
+    Notes from an amateur rocketry &amp; propulsion workbench.
+  </p>
+</header>
+
+<!-- ======================================================
+     INTRO
+     EDIT: a couple of plain-spoken paragraphs, no slogans
+     ====================================================== -->
+<section class="intro reveal">
+  <p>
+    These are some of the rocketry projects I've designed, developed, and
+    tested — mostly in the backyard, occasionally underwater. Each entry
+    below includes what actually happened, not just the parts that worked.
+  </p>
+</section>
+
+<!-- ======================================================
+     WORK / SELECTED BUILDS
+     Each .entry is one project. Copy/paste the whole
+     <article> block to add another.
+     ====================================================== -->
+<section class="section" id="work">
+  <div class="section__head reveal">
+    <span class="section__index">01</span>
+    <h2 class="section__title">Selected builds</h2>
+    <span class="section__note"><a href="all-builds.html">View the complete archive &rarr;</a></span>
+  </div>
+
+  <!-- ---------- ENTRY 1 (duplicate this whole <article> to add a project) ---------- -->
+  <article class="entry reveal">
+    <div class="entry__media">
+      <!-- PHOTO: replace src with your file in assets/photos/ -->
+      <img src="assets/photos/mission-01.jpg" alt="Photo of the submerged launch silo" loading="lazy">
+      <!--
+        TO USE A VIDEO INSTEAD OF A PHOTO, replace the <img> above with:
+        <video controls poster="assets/photos/mission-01-poster.jpg">
+          <source src="assets/videos/mission-01.mp4" type="video/mp4">
+        </video>
+      -->
+      <p class="entry__caption">Fig. 1 — silo test, second attempt</p>
+    </div>
+    <div class="entry__body">
+      <div class="entry__top">
+        <span class="entry__code">RKT&ndash;04</span>
+        <span class="entry__date">2026</span>
+        <span class="entry__status">Tested</span>
+      </div>
+      <h3 class="entry__title">Submerged Launch</h3>
+      <p class="entry__desc">
+        A low-cost setup that launched a rocket from a silo submerged
+        underwater. Two test runs, both recorded on camera from the bank.
+      </p>
+      <dl class="entry__specs">
+        <div><dt>Tests</dt><dd>2</dd></div>
+        <div><dt>Materials</dt><dd>PETG, cardboard</dd></div>
+      </dl>
+    </div>
+  </article>
+
+  <!-- ---------- ENTRY 2 ---------- -->
+  <article class="entry reveal">
+    <div class="entry__media">
+      <img src="assets/photos/underwater%20launch%20ss.jpg" alt="Underwater shot of the rocket launch" loading="lazy">
+      <p class="entry__caption">Fig. 2 — underwater camera, moment of ignition</p>
+    </div>
+    <div class="entry__body">
+      <div class="entry__top">
+        <span class="entry__code">RKT&ndash;05</span>
+        <span class="entry__date">2026</span>
+        <span class="entry__status">In progress</span>
+      </div>
+      <h3 class="entry__title">Meridian II</h3>
+      <p class="entry__desc">
+        Dual-deploy recovery and a redesigned fin can, targeting a
+        controlled descent and a reusable airframe.
+      </p>
+      <dl class="entry__specs">
+        <div><dt>Target</dt><dd>6,000 ft</dd></div>
+        <div><dt>Motor</dt><dd>M650</dd></div>
+        <div><dt>Mass</dt><dd>4.4 kg</dd></div>
+      </dl>
+    </div>
+  </article>
+
+  <!-- ---------- ENTRY 3 ---------- -->
+  <article class="entry reveal">
+    <div class="entry__media">
+      <img src="assets/photos/mission-03.jpg" alt="Static test fire of a small motor" loading="lazy">
+      <p class="entry__caption">Fig. 3 — static fire, load-cell rig</p>
+    </div>
+    <div class="entry__body">
+      <div class="entry__top">
+        <span class="entry__code">PROP&ndash;02</span>
+        <span class="entry__date">2024</span>
+        <span class="entry__status">Tested</span>
+      </div>
+      <h3 class="entry__title">Static Test Stand</h3>
+      <p class="entry__desc">
+        Load-cell equipped test stand for characterizing thrust curves on
+        small-scale motors before flight certification.
+      </p>
+      <dl class="entry__specs">
+        <div><dt>Peak thrust</dt><dd>210 N</dd></div>
+        <div><dt>Burn time</dt><dd>2.4 s</dd></div>
+        <div><dt>Sensor</dt><dd>50 kg LC</dd></div>
+      </dl>
+    </div>
+  </article>
+
+  <!--
+    TO ADD MORE (featured on the homepage):
+    1. Copy one entire <article class="entry reveal"> ... </article> block
+    2. Paste it above this comment
+    3. Change the image, code, date, status, title, description, and specs
+    Keep this section to your best few — put everything else in all-builds.html.
+  -->
+
+</section>
+
+<!-- ======================================================
+     BUILD LOG (chronological notes)
+     ====================================================== -->
+<section class="section" id="log">
+  <div class="section__head reveal">
+    <span class="section__index">02</span>
+    <h2 class="section__title">Build log</h2>
+  </div>
+
+  <ol>
+    <!-- EDIT: add/remove entries — each is one milestone -->
+    <li class="notes__item reveal">
+      <span class="notes__date">2022</span>
+      <p class="notes__text">First certified high-power flight, H-class motor.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">2023</span>
+      <p class="notes__text">Started casting my own composite propellant.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">2024</span>
+      <p class="notes__text">Built a static test stand with load-cell data logging.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">2026</span>
+      <p class="notes__text">First submerged-silo launch attempt, two test runs.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================================================
+     ABOUT
+     EDIT: bio paragraph + the three numbers in the stats line
+     ====================================================== -->
+<section class="section" id="about">
+  <div class="section__head reveal">
+    <span class="section__index">03</span>
+    <h2 class="section__title">About</h2>
+  </div>
+
+  <p class="about__text reveal">
+    I care about the whole process — sketching an idea, machining or
+    3D-printing the parts, running the numbers, and finally watching it
+    fly, or in one case, launch from underwater. Every project here is
+    documented start to finish, including the parts that didn't work.
+  </p>
+
+  <div class="stats-line reveal">
+    <span><b data-count="14">0</b> launches</span>
+    <span><b data-count="4210" data-suffix=" ft">0</b> max apogee</span>
+    <span><b data-count="6">0</b> motors built</span>
+  </div>
+</section>
+
+<!-- ======================================================
+     CONTACT
+     EDIT: email + social links
+     ====================================================== -->
+<section class="section" id="contact">
+  <div class="section__head reveal">
+    <span class="section__index">04</span>
+    <h2 class="section__title">Get in touch</h2>
+  </div>
+
+  <p class="contact__text reveal">
+    Building something similar, or want to collaborate on a launch?
+  </p>
+  <a href="mailto:you@example.com" class="contact__email reveal">you@example.com</a>
+
+  <div class="contact__links reveal">
+    <!-- EDIT: swap hrefs for your real profiles, delete any you don't use -->
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+    <span>/</span>
+    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">Instagram</a>
+    <span>/</span>
+    <a href="https://youtube.com/@yourusername" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</section>
+
+<footer class="footer">
+  &copy; 2026 Rupert Purchase. Built from scratch, launched the same way.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
