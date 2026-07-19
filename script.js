@@ -65,39 +65,6 @@ if (revealEls.length) {
   }
 }
 
-/* ---------- YouTube Video Modal Feature ---------- */
-const modal = document.getElementById("videoModal");
-const frame = document.getElementById("videoFrame");
-
-// Only run if the modal elements actually exist on the current page
-if (modal && frame) {
-  document.querySelectorAll(".video-thumb").forEach(img => {
-    img.addEventListener("click", () => {
-      let url = img.dataset.video;
-      if (!url) return;
-
-      // Convert normal YouTube links into embed links
-      if (url.includes("watch?v=")) {
-        url = url.replace("watch?v=", "embed/");
-      } else if (url.includes("youtu.be/")) {
-        const id = url.split("youtu.be/")[1].split("?")[0];
-        url = `https://www.youtube.com/embed/${id}`;
-      }
-
-      frame.src = url + (url.includes("?") ? "&" : "?") + "autoplay=1";
-      modal.classList.add("open");
-    });
-  });
-
-  modal.addEventListener("click", e => {
-    // Only close if the dark background is clicked
-    if (e.target === modal) {
-      modal.classList.remove("open");
-      frame.src = "";
-    }
-  });
-}
-
 });
 
   /* sample video */
