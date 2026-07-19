@@ -361,6 +361,17 @@ a:focus-visible, button:focus-visible {
   color: var(--text-dim);
 }
 
+.gallery-link {
+  color: var(--accent);
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.gallery-link:hover {
+  transform: scale(1.08);
+  color: var(--accent);
+}
+
 .contact__links a:hover { color: var(--accent); }
 .contact__links span { color: var(--text-faint); }
 
