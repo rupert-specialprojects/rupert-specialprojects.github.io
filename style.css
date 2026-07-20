@@ -84,7 +84,19 @@ a:focus-visible, button:focus-visible {
   flex-wrap: wrap;
   gap: 16px 32px;
   padding-bottom: 28px;
-  border-bottom: 1px solid var(--line);
+  position: relative; /* Established for the drawing line coordinate space */
+}
+
+.masthead__top::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--line);
+  width: 0;
+  animation: drawLine 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.2s;
 }
 
 .masthead__name {
@@ -119,7 +131,8 @@ a:focus-visible, button:focus-visible {
 
 .nav-highlight {
   display: inline-block;
-  animation: navHighlightPulse 0.7s ease-out 0.2s both;
+  animation: navHighlightPulse 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.65s; /* Aligned precisely with its position in the nav stack */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -531,4 +544,74 @@ a:focus-visible, button:focus-visible {
   .masthead { padding: 44px 20px 30px; }
   .masthead__nav { gap: 14px; font-size: 0.72rem; }
   .intro, .section, .archive-head, .footer { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ============================================================
+   SYSTEM OPENING ANIMATIONS
+   ============================================================ */
+
+/* Brief fade curtain preventing flash of content */
+.opening-curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 10000;
+  pointer-events: none;
+  animation: fadeOutCurtain 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+/* Staggered entrance baseline for masthead structural components */
+.masthead__name,
+.masthead__nav a:not(.nav-highlight),
+.masthead__tagline {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: mastheadFadeUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Progression Sequence Timing */
+.masthead__name { animation-delay: 0.35s; }
+.masthead__nav a:nth-child(1) { animation-delay: 0.45s; }
+.masthead__nav a:nth-child(2) { animation-delay: 0.50s; }
+.masthead__nav a:nth-child(3) { animation-delay: 0.55s; }
+.masthead__nav a:nth-child(4) { animation-delay: 0.60s; }
+.masthead__nav a:nth-child(5) { animation-delay: 0.65s; }
+.masthead__nav a:nth-child(6) { animation-delay: 0.70s; }
+.masthead__tagline { animation-delay: 0.8s; }
+
+@keyframes drawLine {
+  0% { width: 0; background: var(--accent); }
+  60% { background: var(--accent); }
+  100% { width: 100%; background: var(--line); }
+}
+
+@keyframes mastheadFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutCurtain {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Overriding the standard highlight pulse to incorporate the staggering phase */
+@keyframes navHighlightPulse {
+  0%   { opacity: 0; transform: translateY(6px) scale(1); color: var(--text-dim); }
+  35%  { opacity: 1; transform: translateY(0) scale(1); color: var(--text-dim); }
+  70%  { color: var(--accent); transform: scale(1.18); }
+  100% { opacity: 1; transform: translateY(0) scale(1); color: var(--accent); }
+}
+
+/* Respect user layout environments with accessibility overrides */
+@media (prefers-reduced-motion: reduce) {
+  .opening-curtain { display: none; }
+  .masthead__top::after { width: 100%; animation: none; background: var(--line); }
+  .masthead__name, 
+  .masthead__nav a, 
+  .masthead__tagline {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .nav-highlight { color: var(--accent); }
 }
