@@ -231,3 +231,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const initScreen = document.getElementById('init-screen');
+  const initBtn = document.getElementById('init-btn');
+  
+  // Set up your MP3
+  const bootSound = new Audio('loading_sfx.mp3');
+
+  initBtn.addEventListener('click', () => {
+    // 1. Hide the initialization screen
+    initScreen.style.display = 'none';
+
+    // 2. Play the MP3 (This now works because the user clicked!)
+    bootSound.play().catch(error => {
+      console.warn("Audio playback failed:", error);
+    });
+
+    // 3. Trigger your boot animation here
+    // (Move your existing boot sequence code into this block)
+    const bootCurtain = document.getElementById('bootCurtain');
+    bootCurtain.removeAttribute('aria-hidden'); 
+    
+    // ... the rest of your boot animation logic ...
+  });
+});
