@@ -615,3 +615,81 @@ a:focus-visible, button:focus-visible {
   }
   .nav-highlight { color: var(--accent); }
 }
+
+/* ============================================================
+   VIDEO HINT POP-UP (TOAST)
+   ============================================================ */
+.hint-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -15px);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+/* State triggered via JavaScript after load sequence */
+.hint-toast.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+/* State when dismissed by user */
+.hint-toast.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -10px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Small square technical node matching accent layout styling */
+.hint-toast__node {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hint-toast__text {
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Ultra-clean plain text close button */
+.hint-toast__close {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 0 4px;
+  line-height: 1;
+  margin-left: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hint-toast__close:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Accessibility override for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hint-toast {
+    transition: none;
+    transform: translate(-50%, 0);
+  }
+}
