@@ -68,7 +68,7 @@ if (bootCurtain) {
       const bootAudio = document.getElementById('bootAudio');
 
       const fillDelay = 550;     // ms before the bar starts moving
-      const fillDuration = 10000; // ms for the bar to reach 100%
+      const fillDuration = 4000; // ms for the bar to reach 100%
       const start = performance.now();
       let finished = false;
 
