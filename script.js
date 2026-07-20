@@ -65,60 +65,50 @@ if (revealEls.length) {
   }
 
   /* sample video */
-
   const modal = document.getElementById("videoModal");
-const frame = document.getElementById("videoFrame");
+  const frame = document.getElementById("videoFrame");
 
-document.querySelectorAll(".video-thumb").forEach(img => {
-
+  document.querySelectorAll(".video-thumb").forEach(img => {
     img.addEventListener("click", () => {
+      let url = img.dataset.video;
 
-        let url = img.dataset.video;
+      // Convert normal YouTube links into embed links
+      if (url.includes("watch?v=")) {
+        url = url.replace("watch?v=", "embed/");
+      } else if (url.includes("youtu.be/")) {
+        const id = url.split("youtu.be/")[1].split("?")[0];
+        url = `https://www.youtube.com/embed/${id}`;
+      }
 
-        // Convert normal YouTube links into embed links
-        if (url.includes("watch?v=")) {
-            url = url.replace("watch?v=", "embed/");
-        } else if (url.includes("youtu.be/")) {
-            const id = url.split("youtu.be/")[1].split("?")[0];
-            url = `https://www.youtube.com/embed/${id}`;
-        }
-
-        frame.src = url + (url.includes("?") ? "&" : "?") + "autoplay=1";
-        modal.classList.add("open");
+      frame.src = url + (url.includes("?") ? "&" : "?") + "autoplay=1";
+      modal.classList.add("open");
     });
+  });
 
-});
-
-modal.addEventListener("click", e => {
-
+  modal.addEventListener("click", e => {
     // Only close if the dark background is clicked
     if (e.target === modal) {
-        modal.classList.remove("open");
-        frame.src = "";
+      modal.classList.remove("open");
+      frame.src = "";
     }
-
-});
-
-  /* sample video */
+  });
 }
+
 /* ---------- Interactive Video Hint Toast ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   const hintToast = document.getElementById('video-hint-toast');
   
   if (hintToast) {
-    // Only display if the user hasn't actively closed it during this browsing session
-    if (!sessionStorage.getItem('dismissed-video-hint')) {
-      setTimeout(() => {
-        hintToast.classList.add('is-visible');
-      }, 1500); // Deliberate delay: slides into view perfectly as the page load animation concludes
-    }
+    // This will now consistently trigger 1.5 seconds after the DOM content loads
+    setTimeout(() => {
+      hintToast.classList.add('is-visible');
+    }, 1500); 
 
     const closeBtn = hintToast.querySelector('.hint-toast__close');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         hintToast.classList.remove('is-visible');
         hintToast.classList.add('is-hidden');
-        sessionStorage.setItem('dismissed-video-hint', 'true');
       });
     }
   }
