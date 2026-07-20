@@ -27,7 +27,7 @@ if (bootCurtain) {
       const statusEl = document.getElementById('bootStatus');
 
       const fillDelay = 550;     // ms before the bar starts moving
-      const fillDuration = 8000; // ms for the bar to reach 100%
+      const fillDuration = 10000; // ms for the bar to reach 100%
       const start = performance.now();
       let finished = false;
 
