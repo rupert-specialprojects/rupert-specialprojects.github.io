@@ -101,3 +101,25 @@ modal.addEventListener("click", e => {
 
   /* sample video */
 }
+/* ---------- Interactive Video Hint Toast ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const hintToast = document.getElementById('video-hint-toast');
+  
+  if (hintToast) {
+    // Only display if the user hasn't actively closed it during this browsing session
+    if (!sessionStorage.getItem('dismissed-video-hint')) {
+      setTimeout(() => {
+        hintToast.classList.add('is-visible');
+      }, 1500); // Deliberate delay: slides into view perfectly as the page load animation concludes
+    }
+
+    const closeBtn = hintToast.querySelector('.hint-toast__close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        hintToast.classList.remove('is-visible');
+        hintToast.classList.add('is-hidden');
+        sessionStorage.setItem('dismissed-video-hint', 'true');
+      });
+    }
+  }
+});
