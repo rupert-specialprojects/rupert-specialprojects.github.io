@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rocketry Summer Camp &mdash; Rupert's Rockets</title>
+<meta name="description" content="A week of building, launching, and learning at rocketry summer camp.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Reuses the same overlay pattern as the video modal on the other
+     pages, plus a matching lightbox for plain photos in the galleries -->
+<div id="imageLightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded photo">
+  <button type="button" class="image-lightbox__close" aria-label="Close">&times;</button>
+  <img id="imageLightboxImg" src="" alt="">
+  <p id="imageLightboxCaption" class="image-lightbox__caption"></p>
+</div>
+
+<body class="camp-page">
+
+<div class="opening-curtain"></div>
+
+<!-- Custom cursor — script.js only turns this on for fine-pointer,
+     non-reduced-motion visitors. Everyone else gets the normal cursor. -->
+<div class="camp-cursor" aria-hidden="true">
+  <div class="camp-cursor__dot"></div>
+  <div class="camp-cursor__ring"></div>
+</div>
+
+<!-- Same masthead as the other pages — keep all of these in sync if you edit one -->
+<header class="masthead">
+  <div class="masthead__top">
+    <a href="index.html" class="masthead__name">Rupert's Rockets</a>
+    <nav class="masthead__nav">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#log">Build Log</a>
+      <a href="index.html#about">About</a>
+      <a href="all-builds.html">All Builds</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================================================
+     HERO
+     EDIT: the tagline, and the dates in the eyebrow line.
+     Click (or tab + Enter) on the rocket to launch it — a
+     small easter egg, not required reading.
+     ====================================================== -->
+<section class="camp-hero reveal">
+  <div class="camp-hero__text">
+    <span class="section__index">Summer 2026 &middot; Rocketry Camp</span>
+    <h1 class="section__title camp-hero__title">Rocketry Summer Camp</h1>
+    <p class="camp-hero__tagline">
+      <!-- EDIT: a short, fun tagline -->
+      One week, a pile of igniters, and more launches than the neighbors were expecting.
+    </p>
+    <a href="all-builds.html" class="camp-hero__back">&larr; Back to all builds</a>
+  </div>
+
+  <button type="button" class="hero-rocket" id="heroRocket" aria-label="Click to launch the rocket">
+    <span class="hero-rocket__craft">
+      <svg class="rocket-svg" viewBox="0 0 100 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="rocket-svg__fins">
+          <path d="M32 90 L8 132 L32 118 Z"></path>
+          <path d="M68 90 L92 132 L68 118 Z"></path>
+        </g>
+        <path class="rocket-svg__body" d="M50 4 Q72 46 68 96 Q68 112 50 116 Q32 112 32 96 Q28 46 50 4 Z"></path>
+        <circle class="rocket-svg__window" cx="50" cy="55" r="9"></circle>
+        <line class="rocket-svg__seam" x1="34" y1="90" x2="66" y2="90"></line>
+        <g class="rocket-svg__flame">
+          <path class="rocket-svg__flame-outer" d="M38 114 Q50 168 62 114 Q50 138 38 114 Z"></path>
+          <path class="rocket-svg__flame-inner" d="M44 114 Q50 148 56 114 Q50 130 44 114 Z"></path>
+        </g>
+      </svg>
+    </span>
+    <span class="hero-rocket__hint">click to launch</span>
+  </button>
+</section>
+
+<section class="intro reveal">
+  <p>
+    <!-- EDIT: a couple of sentences about the camp itself — where it
+         was, who ran it, and what made it worth writing up. -->
+    Every summer I spend a week away at a rocketry camp — part classroom,
+    part workshop, part launch range. This page is the recap: what we
+    built, what flew, and what didn't.
+  </p>
+</section>
+
+<!-- ======================================================
+     STATS
+     EDIT: change the data-count numbers to match your camp.
+     The counters animate automatically once scrolled into view —
+     same mechanism as everywhere else on the site, no extra JS needed.
+     ====================================================== -->
+<section class="section camp-stats">
+  <div class="section__head reveal">
+    <span class="section__index">By the numbers</span>
+    <h2 class="section__title">Camp, in stats</h2>
+  </div>
+
+  <div class="stats-line reveal">
+    <span><b data-count="5">0</b> days at camp</span>
+    <span><b data-count="14">0</b> rockets built</span>
+    <span><b data-count="11">0</b> successful launches</span>
+    <!-- EDIT: swap this last one for whatever's actually true / funny -->
+    <span><b data-count="20" data-suffix="+">0</b> marshmallows harmed</span>
+  </div>
+</section>
+
+<!-- ======================================================
+     CAMP LOG
+     Same .notes__item pattern as the Build Log on the homepage.
+     EDIT: one line per day — copy/paste an <li> to add more.
+     ====================================================== -->
+<section class="section camp-log">
+  <div class="section__head reveal">
+    <span class="section__index">Field notes</span>
+    <h2 class="section__title">Camp log</h2>
+  </div>
+
+  <ol>
+    <li class="notes__item reveal">
+      <span class="notes__date">Day 1</span>
+      <!-- EDIT -->
+      <p class="notes__text">Intro to rocketry basics — stability, engines, and why fins matter more than they look like they should.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">Day 2</span>
+      <!-- EDIT -->
+      <p class="notes__text">Built and painted our first airframes. Turns out spray paint and wind are not friends.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">Day 3</span>
+      <!-- EDIT -->
+      <p class="notes__text">First launches of the week — most went up, most came down in one piece.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">Day 4</span>
+      <!-- EDIT -->
+      <p class="notes__text">Bigger engines, bigger rockets, and one very memorable altitude record.</p>
+    </li>
+    <li class="notes__item reveal">
+      <span class="notes__date">Day 5</span>
+      <!-- EDIT -->
+      <p class="notes__text">Final launch day — the whole camp came out to watch the last flights.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================================================
+     GALLERY — BUILDS
+     Same idea as the entry photos elsewhere: drop a real photo
+     in and it replaces the placeholder automatically.
+
+     TO ADD A REAL PHOTO:
+     Replace one whole <figure class="gallery-item reveal"> block's
+     placeholder <div> with:
+       <img class="gallery-item__img" src="assets/photos/your-photo.jpg"
+            data-fullsrc="assets/photos/your-photo.jpg" alt="Describe the photo">
+     Click-to-expand works automatically once data-fullsrc is set.
+     ====================================================== -->
+<section class="section camp-gallery">
+  <div class="section__head reveal">
+    <span class="section__index">Gallery</span>
+    <h2 class="section__title">Builds</h2>
+    <span class="section__note">Click any photo to expand</span>
+  </div>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item reveal">
+      <!-- EDIT: replace this placeholder with a real <img>, see comment above -->
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Airframe assembly</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Fin alignment jig</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Paint &amp; decals</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Recovery wadding + chute pack</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Engine prep</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Finished airframes, ready to fly</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================================================
+     GALLERY — LAUNCH DAY
+     Same pattern as the gallery above.
+     ====================================================== -->
+<section class="section camp-gallery">
+  <div class="section__head reveal">
+    <span class="section__index">Gallery</span>
+    <h2 class="section__title">Launch day</h2>
+    <span class="section__note">Click any photo to expand</span>
+  </div>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>On the pad</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Ignition</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Chute deployment</figcaption>
+    </figure>
+    <figure class="gallery-item reveal">
+      <div class="gallery-item__placeholder"><span class="gallery-item__placeholder-icon">+</span><span class="gallery-item__placeholder-text">Add photo</span></div>
+      <figcaption>Whole camp, last day</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer class="footer">
+  &copy; 2026 Rupert Purchase. Built from scratch, launched the same way.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
