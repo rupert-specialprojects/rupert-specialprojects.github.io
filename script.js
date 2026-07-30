@@ -305,8 +305,8 @@ if (campCursor && !prefersReducedMotion && window.matchMedia('(pointer: fine)').
   // The ring trails slightly behind the raw mouse position for a
   // little smooth "weight" — the dot above stays glued to the pointer.
   function tickCursorRing() {
-    ringX += (mouseX - ringX) * 0.9;
-    ringY += (mouseY - ringY) * 0.9;
+    ringX += (mouseX - ringX) * 0.98;
+    ringY += (mouseY - ringY) * 0.98;
     if (cursorRing) {
       cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
     }
